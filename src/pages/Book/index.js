@@ -4,6 +4,7 @@ import { Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; 
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 export default class Book extends Component {
     render() {
@@ -22,6 +23,28 @@ export default class Book extends Component {
                         <AntDesign name="link" size={16} color="#eeeeee" />
                         <Text style={styles.text}>{this.props.data.url}</Text> 
                     </View>
+                    <View style={styles.stars}>
+                        { this.props.data.rate >= 1 ?
+                            ( <FontAwesome size={16} color='white' name='star' /> ) : 
+                            ( <FontAwesome size={16} color='white' name='star-o' /> ) 
+                        }
+                        { this.props.data.rate >= 2 ?
+                            ( <FontAwesome size={16} color='white' name='star' /> ) : 
+                            ( <FontAwesome size={16} color='white' name='star-o' /> ) 
+                        }
+                        { this.props.data.rate >= 3 ?
+                            ( <FontAwesome size={16} color='white' name='star' /> ) : 
+                            ( <FontAwesome size={16} color='white' name='star-o' /> ) 
+                        }
+                        { this.props.data.rate >= 4 ?
+                            ( <FontAwesome size={16} color='white' name='star' /> ) : 
+                            ( <FontAwesome size={16} color='white' name='star-o' /> ) 
+                        }
+                        { this.props.data.rate >= 5 ?
+                            ( <FontAwesome size={16} color='white' name='star' /> ) : 
+                            ( <FontAwesome size={16} color='white' name='star-o' /> ) 
+                        }
+                    </View>           
                 </View>
             </View>     
         );
@@ -30,13 +53,14 @@ export default class Book extends Component {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
       justifyContent: 'center',
       marginLeft: 20,
       marginRight: 20,
       backgroundColor: '#004687',
       borderRadius: 15,
-      marginBottom: 10
+      marginBottom: 10,
+      width: '90%',
+      maxHeight: 130
     },
     book: {
         padding: 10,
@@ -49,6 +73,11 @@ const styles = StyleSheet.create({
     text: {
         marginLeft: 5,
         color: '#eeeeee'
+    },
+    stars: {
+        flexDirection: 'row',
+        padding: 3,
+        marginLeft: 3
     }
  });
   

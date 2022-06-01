@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import { StyleSheet, View, Content, FlatList, Text, TextInput } from 'react-native';
+import { StyleSheet, View, FlatList, Text, TextInput } from 'react-native';
+import { ScrollView } from 'react-native-virtualized-view';
 import Book from './src/pages/Book';
 import api from './src/services/Api';
 import { NativeBaseProvider } from 'native-base';
@@ -30,19 +31,19 @@ export default class App extends Component {
   render() {
     return(
       <NativeBaseProvider>
-        <View style={styles.header}>
-          <Text style={styles.title}>Books Web Service</Text>
-        </View>
-        <View style={styles.search}>
-          <TextInput placeholder="Write book name here" style={styles.input} onChangeText={ (text) => this.getByTitle(text) } />    
-        </View>
-        <View>
+          <View style={styles.header}>
+            <Text style={styles.title}>Books Web Service</Text>
+          </View>
+          <View style={styles.search}>
+            <TextInput placeholder="Write book name here" style={styles.input} onChangeText={ (text) => this.getByTitle(text) } />    
+          </View>
+          <ScrollView>
             <FlatList 
-            data={this.state.books}
-            keyExtractor={item => item.id}
-            renderItem={({item}) => <Book data={item} />}
+              data={this.state.books}
+              keyExtractor={item => item.id}
+              renderItem={({item}) => <Book data={item} />}
             />  
-        </View>
+          </ScrollView>  
       </NativeBaseProvider>
     )
   }
@@ -57,7 +58,8 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
-    maxHeight: 100,
+    minHeight: '12%',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'flex-end',
     backgroundColor: '#002343'
