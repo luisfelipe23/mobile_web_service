@@ -17,8 +17,12 @@ Now, you just need to run the application on a mobile service using Expo Cli or 
 ## Prints
 Initial view:
 
-<img src="https://i.imgur.com/tvBYFIH.jpg" alt="drawing" width="300"/>
+<img src="https://i.imgur.com/76VBR9g.jpg" alt="drawing" width="300"/>
 
 View when a title is searched:
 
-<img src="https://i.imgur.com/Vdh2Olw.jpg" alt="drawing" width="300"/>
+<img src="https://i.imgur.com/MlIA32l.jpg" alt="drawing" width="300"/>
+
+Edit item view:
+
+<img src="https://i.imgur.com/n8c8NBA.jpg" alt="drawing" width="300"/>
